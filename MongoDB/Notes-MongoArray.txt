@@ -1,0 +1,12 @@
+db.movie.find().pretty();
+
+db.movie.update({name:'3 idiots'},{$unset:{"Remark 2":""}})
+
+db.movie.update({name:'3 idiots'},{$push:{actor:'aaa'},$position:2});
+
+db.movie.update({name:'3 idiots'},{$pull:{actor:'kareena'}})
+
+db.movie.update({name:'3 idiots'},{$push:{actor:{$each:['bbb','ccc'],$position:2}}});
+
+db.movie.update({name:'3 idiots'},{$pop:{actor:-1}})
+
